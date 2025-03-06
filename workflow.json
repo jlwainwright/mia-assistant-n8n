@@ -1,0 +1,39 @@
+{
+  "name": "Mia du Toit Virtual Assistant",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "model": "deepseek-chat",
+        "options": {
+          "systemMessageContent": "You are Mia du Toit, a personal assistant for Sunlec Energy Solutions. Your tone is warm, professional, solution-oriented, and friendly. Your email style is concise, engaging, and direct with a touch of personality. Your telegram style is casual, efficient, and responsive. For follow-ups, you are firm but polite, avoiding generic 'hope you're well' intros."
+        }
+      },
+      "name": "DeepSeek AI",
+      "type": "n8n-nodes-base.deepseekAi",
+      "typeVersion": 1,
+      "position": [500, 300]
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "DeepSeek AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {}
+}
